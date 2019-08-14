@@ -1,0 +1,1488 @@
+{
+  "contractName": "Oracle",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "myId",
+          "type": "bytes32"
+        },
+        {
+          "name": "result",
+          "type": "string"
+        }
+      ],
+      "name": "__callback",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_myid",
+          "type": "bytes32"
+        },
+        {
+          "name": "_result",
+          "type": "string"
+        },
+        {
+          "name": "_proof",
+          "type": "bytes"
+        }
+      ],
+      "name": "__callback",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_type",
+          "type": "string"
+        },
+        {
+          "name": "_url",
+          "type": "string"
+        }
+      ],
+      "name": "query",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"myId\",\"type\":\"bytes32\"},{\"name\":\"result\",\"type\":\"string\"}],\"name\":\"__callback\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_myid\",\"type\":\"bytes32\"},{\"name\":\"_result\",\"type\":\"string\"},{\"name\":\"_proof\",\"type\":\"bytes\"}],\"name\":\"__callback\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_type\",\"type\":\"string\"},{\"name\":\"_url\",\"type\":\"string\"}],\"name\":\"query\",\"outputs\":[{\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/Sim'S/WebstormProjects/kmxv1/contracts/kmx/utils/Oracle.sol\":\"Oracle\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/Sim'S/WebstormProjects/kmxv1/contracts/kmx/utils/Oracle.sol\":{\"keccak256\":\"0x940349e82660c0b436cc15b9ab9b27c20c68301c53cb2e1da536443f6dd564c4\",\"urls\":[\"bzzr://9614a0557cbe93f82c1832d6785fdf2935c97dc06e464121a28dfe8982229248\"]},\"/C/Users/Sim'S/WebstormProjects/kmxv1/contracts/kmx/utils/OraclizeAPI.sol\":{\"keccak256\":\"0x4f720f44b2d66c717a8f2c7c9791eaec9c7bcc4b394ce2ac740a7ac56bc9201e\",\"urls\":[\"bzzr://044477ab2791f7e4210044f1b0be94a0093e1bc9423f16ee267e599bfede9168\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity >=0.4.10 <0.6.0;\r\n\r\nimport \"./OraclizeAPI.sol\";\r\n\r\ncontract Oracle is usingOraclize {\r\n    function __callback(bytes32 myId, string memory result) public {\r\n        require(msg.sender == oraclize_cbAddress(), \"Must be called only by Oracle\");\r\n        _oracleCallback(myId, result);\r\n    }\r\n\r\n    function _oracleCallback(bytes32 myId, string memory result) internal;\r\n\r\n    function query(string memory _type, string memory _url) public returns(bytes32) {\r\n        return oraclize_query(_type, _url);\r\n    }\r\n}",
+  "sourcePath": "C:\\Users\\Sim'S\\WebstormProjects\\kmxv1\\contracts\\kmx\\utils\\Oracle.sol",
+  "ast": {
+    "absolutePath": "/C/Users/Sim'S/WebstormProjects/kmxv1/contracts/kmx/utils/Oracle.sol",
+    "exportedSymbols": {
+      "Oracle": [
+        7590
+      ]
+    },
+    "id": 7591,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 7542,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".10",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:32:22"
+      },
+      {
+        "absolutePath": "/C/Users/Sim'S/WebstormProjects/kmxv1/contracts/kmx/utils/OraclizeAPI.sol",
+        "file": "./OraclizeAPI.sol",
+        "id": 7543,
+        "nodeType": "ImportDirective",
+        "scope": 7591,
+        "sourceUnit": 13887,
+        "src": "36:27:22",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 7544,
+              "name": "usingOraclize",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 13886,
+              "src": "86:13:22",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_usingOraclize_$13886",
+                "typeString": "contract usingOraclize"
+              }
+            },
+            "id": 7545,
+            "nodeType": "InheritanceSpecifier",
+            "src": "86:13:22"
+          }
+        ],
+        "contractDependencies": [
+          13886
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 7590,
+        "linearizedBaseContracts": [
+          7590,
+          13886
+        ],
+        "name": "Oracle",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 7566,
+              "nodeType": "Block",
+              "src": "170:135:22",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 7557,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 7553,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 14136,
+                            "src": "189:3:22",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 7554,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "189:10:22",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "arguments": [],
+                          "expression": {
+                            "argumentTypes": [],
+                            "id": 7555,
+                            "name": "oraclize_cbAddress",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 11709,
+                            "src": "203:18:22",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_nonpayable$__$returns$_t_address_$",
+                              "typeString": "function () returns (address)"
+                            }
+                          },
+                          "id": 7556,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "203:20:22",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "189:34:22",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4d7573742062652063616c6c6564206f6e6c79206279204f7261636c65",
+                        "id": 7558,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "225:31:22",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_155e2c4ef26687a98121f97f3c6dbcb586b650ecbc56092dcb5c94b617314f56",
+                          "typeString": "literal_string \"Must be called only by Oracle\""
+                        },
+                        "value": "Must be called only by Oracle"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_155e2c4ef26687a98121f97f3c6dbcb586b650ecbc56092dcb5c94b617314f56",
+                          "typeString": "literal_string \"Must be called only by Oracle\""
+                        }
+                      ],
+                      "id": 7552,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        14139,
+                        14140
+                      ],
+                      "referencedDeclaration": 14140,
+                      "src": "181:7:22",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 7559,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "181:76:22",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 7560,
+                  "nodeType": "ExpressionStatement",
+                  "src": "181:76:22"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 7562,
+                        "name": "myId",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7547,
+                        "src": "284:4:22",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 7563,
+                        "name": "result",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7549,
+                        "src": "290:6:22",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "id": 7561,
+                      "name": "_oracleCallback",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7574,
+                      "src": "268:15:22",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_bytes32_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bytes32,string memory)"
+                      }
+                    },
+                    "id": 7564,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "268:29:22",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 7565,
+                  "nodeType": "ExpressionStatement",
+                  "src": "268:29:22"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 7567,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "__callback",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7550,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7547,
+                  "name": "myId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7567,
+                  "src": "127:12:22",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 7546,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "127:7:22",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7549,
+                  "name": "result",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7567,
+                  "src": "141:20:22",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 7548,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "141:6:22",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "126:36:22"
+            },
+            "returnParameters": {
+              "id": 7551,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "170:0:22"
+            },
+            "scope": 7590,
+            "src": "107:198:22",
+            "stateMutability": "nonpayable",
+            "superFunction": 8613,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7574,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_oracleCallback",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7572,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7569,
+                  "name": "myId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7574,
+                  "src": "338:12:22",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 7568,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "338:7:22",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7571,
+                  "name": "result",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7574,
+                  "src": "352:20:22",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 7570,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "352:6:22",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "337:36:22"
+            },
+            "returnParameters": {
+              "id": 7573,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "382:0:22"
+            },
+            "scope": 7590,
+            "src": "313:70:22",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 7588,
+              "nodeType": "Block",
+              "src": "471:53:22",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 7584,
+                        "name": "_type",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7576,
+                        "src": "504:5:22",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 7585,
+                        "name": "_url",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7578,
+                        "src": "511:4:22",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "id": 7583,
+                      "name": "oraclize_query",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        8713,
+                        8756,
+                        8803,
+                        8848,
+                        8892,
+                        8938,
+                        8988,
+                        9036,
+                        9084,
+                        9134,
+                        9188,
+                        9240,
+                        9277,
+                        9317,
+                        9360,
+                        9400,
+                        9445,
+                        9493,
+                        9544,
+                        9592,
+                        9645,
+                        9701,
+                        9760,
+                        9816,
+                        9877,
+                        9941,
+                        10008,
+                        10072,
+                        10141,
+                        10213,
+                        10288,
+                        10360,
+                        10408,
+                        10458,
+                        10512,
+                        10564,
+                        10601,
+                        10641,
+                        10684,
+                        10724,
+                        10769,
+                        10817,
+                        10868,
+                        10916,
+                        10969,
+                        11025,
+                        11084,
+                        11140,
+                        11201,
+                        11265,
+                        11332,
+                        11396,
+                        11465,
+                        11537,
+                        11612,
+                        11684
+                      ],
+                      "referencedDeclaration": 8713,
+                      "src": "489:14:22",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_bytes32_$",
+                        "typeString": "function (string memory,string memory) returns (bytes32)"
+                      }
+                    },
+                    "id": 7586,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "489:27:22",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "functionReturnParameters": 7582,
+                  "id": 7587,
+                  "nodeType": "Return",
+                  "src": "482:34:22"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 7589,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "query",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7579,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7576,
+                  "name": "_type",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7589,
+                  "src": "406:19:22",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 7575,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "406:6:22",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7578,
+                  "name": "_url",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7589,
+                  "src": "427:18:22",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 7577,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "427:6:22",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "405:41:22"
+            },
+            "returnParameters": {
+              "id": 7582,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7581,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7589,
+                  "src": "462:7:22",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 7580,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "462:7:22",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "461:9:22"
+            },
+            "scope": 7590,
+            "src": "391:133:22",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 7591,
+        "src": "67:460:22"
+      }
+    ],
+    "src": "0:527:22"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/Sim'S/WebstormProjects/kmxv1/contracts/kmx/utils/Oracle.sol",
+    "exportedSymbols": {
+      "Oracle": [
+        7590
+      ]
+    },
+    "id": 7591,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 7542,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".10",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:32:22"
+      },
+      {
+        "absolutePath": "/C/Users/Sim'S/WebstormProjects/kmxv1/contracts/kmx/utils/OraclizeAPI.sol",
+        "file": "./OraclizeAPI.sol",
+        "id": 7543,
+        "nodeType": "ImportDirective",
+        "scope": 7591,
+        "sourceUnit": 13887,
+        "src": "36:27:22",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 7544,
+              "name": "usingOraclize",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 13886,
+              "src": "86:13:22",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_usingOraclize_$13886",
+                "typeString": "contract usingOraclize"
+              }
+            },
+            "id": 7545,
+            "nodeType": "InheritanceSpecifier",
+            "src": "86:13:22"
+          }
+        ],
+        "contractDependencies": [
+          13886
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 7590,
+        "linearizedBaseContracts": [
+          7590,
+          13886
+        ],
+        "name": "Oracle",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 7566,
+              "nodeType": "Block",
+              "src": "170:135:22",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 7557,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 7553,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 14136,
+                            "src": "189:3:22",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 7554,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "189:10:22",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "arguments": [],
+                          "expression": {
+                            "argumentTypes": [],
+                            "id": 7555,
+                            "name": "oraclize_cbAddress",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 11709,
+                            "src": "203:18:22",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_nonpayable$__$returns$_t_address_$",
+                              "typeString": "function () returns (address)"
+                            }
+                          },
+                          "id": 7556,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "203:20:22",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "189:34:22",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4d7573742062652063616c6c6564206f6e6c79206279204f7261636c65",
+                        "id": 7558,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "225:31:22",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_155e2c4ef26687a98121f97f3c6dbcb586b650ecbc56092dcb5c94b617314f56",
+                          "typeString": "literal_string \"Must be called only by Oracle\""
+                        },
+                        "value": "Must be called only by Oracle"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_155e2c4ef26687a98121f97f3c6dbcb586b650ecbc56092dcb5c94b617314f56",
+                          "typeString": "literal_string \"Must be called only by Oracle\""
+                        }
+                      ],
+                      "id": 7552,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        14139,
+                        14140
+                      ],
+                      "referencedDeclaration": 14140,
+                      "src": "181:7:22",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 7559,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "181:76:22",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 7560,
+                  "nodeType": "ExpressionStatement",
+                  "src": "181:76:22"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 7562,
+                        "name": "myId",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7547,
+                        "src": "284:4:22",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 7563,
+                        "name": "result",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7549,
+                        "src": "290:6:22",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "id": 7561,
+                      "name": "_oracleCallback",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7574,
+                      "src": "268:15:22",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_bytes32_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bytes32,string memory)"
+                      }
+                    },
+                    "id": 7564,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "268:29:22",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 7565,
+                  "nodeType": "ExpressionStatement",
+                  "src": "268:29:22"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 7567,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "__callback",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7550,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7547,
+                  "name": "myId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7567,
+                  "src": "127:12:22",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 7546,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "127:7:22",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7549,
+                  "name": "result",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7567,
+                  "src": "141:20:22",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 7548,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "141:6:22",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "126:36:22"
+            },
+            "returnParameters": {
+              "id": 7551,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "170:0:22"
+            },
+            "scope": 7590,
+            "src": "107:198:22",
+            "stateMutability": "nonpayable",
+            "superFunction": 8613,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 7574,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_oracleCallback",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7572,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7569,
+                  "name": "myId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7574,
+                  "src": "338:12:22",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 7568,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "338:7:22",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7571,
+                  "name": "result",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7574,
+                  "src": "352:20:22",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 7570,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "352:6:22",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "337:36:22"
+            },
+            "returnParameters": {
+              "id": 7573,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "382:0:22"
+            },
+            "scope": 7590,
+            "src": "313:70:22",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 7588,
+              "nodeType": "Block",
+              "src": "471:53:22",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 7584,
+                        "name": "_type",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7576,
+                        "src": "504:5:22",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 7585,
+                        "name": "_url",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7578,
+                        "src": "511:4:22",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "id": 7583,
+                      "name": "oraclize_query",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        8713,
+                        8756,
+                        8803,
+                        8848,
+                        8892,
+                        8938,
+                        8988,
+                        9036,
+                        9084,
+                        9134,
+                        9188,
+                        9240,
+                        9277,
+                        9317,
+                        9360,
+                        9400,
+                        9445,
+                        9493,
+                        9544,
+                        9592,
+                        9645,
+                        9701,
+                        9760,
+                        9816,
+                        9877,
+                        9941,
+                        10008,
+                        10072,
+                        10141,
+                        10213,
+                        10288,
+                        10360,
+                        10408,
+                        10458,
+                        10512,
+                        10564,
+                        10601,
+                        10641,
+                        10684,
+                        10724,
+                        10769,
+                        10817,
+                        10868,
+                        10916,
+                        10969,
+                        11025,
+                        11084,
+                        11140,
+                        11201,
+                        11265,
+                        11332,
+                        11396,
+                        11465,
+                        11537,
+                        11612,
+                        11684
+                      ],
+                      "referencedDeclaration": 8713,
+                      "src": "489:14:22",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_bytes32_$",
+                        "typeString": "function (string memory,string memory) returns (bytes32)"
+                      }
+                    },
+                    "id": 7586,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "489:27:22",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "functionReturnParameters": 7582,
+                  "id": 7587,
+                  "nodeType": "Return",
+                  "src": "482:34:22"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 7589,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "query",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7579,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7576,
+                  "name": "_type",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7589,
+                  "src": "406:19:22",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 7575,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "406:6:22",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7578,
+                  "name": "_url",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7589,
+                  "src": "427:18:22",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 7577,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "427:6:22",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "405:41:22"
+            },
+            "returnParameters": {
+              "id": 7582,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7581,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7589,
+                  "src": "462:7:22",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 7580,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "462:7:22",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "461:9:22"
+            },
+            "scope": 7590,
+            "src": "391:133:22",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 7591,
+        "src": "67:460:22"
+      }
+    ],
+    "src": "0:527:22"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.8+commit.23d335f2.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.10",
+  "updatedAt": "2019-07-02T19:57:58.807Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

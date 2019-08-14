@@ -1,0 +1,224 @@
+{
+  "contractName": "AdminRegistry",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/Sim'S/WebstormProjects/kmxv1/contracts/kmx/AdminRegistry.sol\":\"AdminRegistry\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/Sim'S/WebstormProjects/kmxv1/contracts/kmx/AdminRegistry.sol\":{\"keccak256\":\"0xd9892823222414d28c4b27cfbe184b0431ba775436763339c61860574cb91052\",\"urls\":[\"bzzr://4cf0cd8ccf637d416c7bb3e2432431d4860758485852c7e17c6c9cf6028661d6\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3fe6080604052600080fdfea165627a7a723058204da070aa2c6f282b4145d1fd21cea64d779231e13c685c616da35ab048d693870029",
+  "deployedBytecode": "0x6080604052600080fdfea165627a7a723058204da070aa2c6f282b4145d1fd21cea64d779231e13c685c616da35ab048d693870029",
+  "sourceMap": "36:97:4:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;36:97:4;;;;;;;",
+  "deployedSourceMap": "36:97:4:-;;;;;",
+  "source": "pragma solidity >=0.4.10 <0.6.0;\r\n\r\ncontract AdminRegistry {\r\n    struct Admin {\r\n        mapping (address => bool) admins;\r\n    }\r\n}\r\n",
+  "sourcePath": "C:\\Users\\Sim'S\\WebstormProjects\\kmxv1\\contracts\\kmx\\AdminRegistry.sol",
+  "ast": {
+    "absolutePath": "/C/Users/Sim'S/WebstormProjects/kmxv1/contracts/kmx/AdminRegistry.sol",
+    "exportedSymbols": {
+      "AdminRegistry": [
+        382
+      ]
+    },
+    "id": 383,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 376,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".10",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:32:4"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 382,
+        "linearizedBaseContracts": [
+          382
+        ],
+        "name": "AdminRegistry",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "AdminRegistry.Admin",
+            "id": 381,
+            "members": [
+              {
+                "constant": false,
+                "id": 380,
+                "name": "admins",
+                "nodeType": "VariableDeclaration",
+                "scope": 381,
+                "src": "90:32:4",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                  "typeString": "mapping(address => bool)"
+                },
+                "typeName": {
+                  "id": 379,
+                  "keyType": {
+                    "id": 377,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "99:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "nodeType": "Mapping",
+                  "src": "90:25:4",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                    "typeString": "mapping(address => bool)"
+                  },
+                  "valueType": {
+                    "id": 378,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "110:4:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Admin",
+            "nodeType": "StructDefinition",
+            "scope": 382,
+            "src": "66:64:4",
+            "visibility": "public"
+          }
+        ],
+        "scope": 383,
+        "src": "36:97:4"
+      }
+    ],
+    "src": "0:135:4"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/Sim'S/WebstormProjects/kmxv1/contracts/kmx/AdminRegistry.sol",
+    "exportedSymbols": {
+      "AdminRegistry": [
+        382
+      ]
+    },
+    "id": 383,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 376,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".10",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:32:4"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 382,
+        "linearizedBaseContracts": [
+          382
+        ],
+        "name": "AdminRegistry",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "AdminRegistry.Admin",
+            "id": 381,
+            "members": [
+              {
+                "constant": false,
+                "id": 380,
+                "name": "admins",
+                "nodeType": "VariableDeclaration",
+                "scope": 381,
+                "src": "90:32:4",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                  "typeString": "mapping(address => bool)"
+                },
+                "typeName": {
+                  "id": 379,
+                  "keyType": {
+                    "id": 377,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "99:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "nodeType": "Mapping",
+                  "src": "90:25:4",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                    "typeString": "mapping(address => bool)"
+                  },
+                  "valueType": {
+                    "id": 378,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "110:4:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Admin",
+            "nodeType": "StructDefinition",
+            "scope": 382,
+            "src": "66:64:4",
+            "visibility": "public"
+          }
+        ],
+        "scope": 383,
+        "src": "36:97:4"
+      }
+    ],
+    "src": "0:135:4"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.8+commit.23d335f2.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.10",
+  "updatedAt": "2019-07-02T19:57:58.319Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

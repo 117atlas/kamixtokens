@@ -1,0 +1,26 @@
+{
+  "name": "kmxv1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "bn.js": "^4.11.8",
+    "chai": "^4.2.0",
+    "dotenv": "^8.0.0",
+    "ethereumjs-tx": "^1.3.7",
+    "mocha": "^6.1.4",
+    "truffle-assertions": "^0.9.1",
+    "truffle-hdwallet-provider": "^1.0.10",
+    "web3": "^1.0.0-beta.55"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha -R"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
