@@ -24026,12 +24026,12 @@
     "3": {
       "events": {},
       "links": {},
-      "address": "0xF95f8cF3eec5753A70AC2242d3c72Ec25cC2E354",
-      "transactionHash": "0x2ddf146ed1406592bacdbaa01e80fff3d4ac3bdf8871989b2fa6665e3ccb5725"
+      "address": "0x395f8965f7577824Ca1D53C312f5F0a59494bEf6",
+      "transactionHash": "0x56f01ee939d6533102617798fb6fe0f2c8775c851eee721125f2bfb682888fa1"
     }
   },
   "schemaVersion": "3.0.10",
-  "updatedAt": "2019-07-02T20:05:01.629Z",
+  "updatedAt": "2019-08-23T20:06:11.850Z",
   "devdoc": {
     "methods": {}
   },

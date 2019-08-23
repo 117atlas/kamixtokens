@@ -2816,12 +2816,12 @@
     "3": {
       "events": {},
       "links": {},
-      "address": "0xE168096eC0e2732fAaA340d9Db7a4CD263f42241",
-      "transactionHash": "0x2d77b0c745dad7c089aebc7f7fb9113852ff98b58fb13b80427347113732fa92"
+      "address": "0x6344FA93211Af3f27FD75C52C2E789b16f60ab34",
+      "transactionHash": "0x4c68a6da262c24bf004d3f1bdfe3eb2b61a4391127dc613f4b69f56b5a265b90"
     }
   },
   "schemaVersion": "3.0.10",
-  "updatedAt": "2019-07-02T20:05:01.605Z",
+  "updatedAt": "2019-08-23T20:06:11.835Z",
   "devdoc": {
     "methods": {}
   },

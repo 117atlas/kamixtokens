@@ -285,8 +285,8 @@
           }
         ],
         "contractDependencies": [
-          438,
           297,
+          438,
           7458
         ],
         "contractKind": "contract",
@@ -1620,8 +1620,8 @@
           }
         ],
         "contractDependencies": [
-          438,
           297,
+          438,
           7458
         ],
         "contractKind": "contract",
@@ -2904,7 +2904,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.10",
-  "updatedAt": "2019-07-02T19:57:58.221Z",
+  "updatedAt": "2019-08-23T19:44:19.162Z",
   "devdoc": {
     "methods": {}
   },

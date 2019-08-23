@@ -2582,9 +2582,200 @@
     "name": "solc",
     "version": "0.5.8+commit.23d335f2.Emscripten.clang"
   },
-  "networks": {},
+  "networks": {
+    "3": {
+      "events": {
+        "0x9057dd3707e57f23446a425b1c54d9f920850718f164e6b653fba866c4999d5b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "oldTokenAddress",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "newTokenAddress",
+              "type": "address"
+            }
+          ],
+          "name": "StableTokenChanged",
+          "type": "event",
+          "signature": "0x9057dd3707e57f23446a425b1c54d9f920850718f164e6b653fba866c4999d5b"
+        },
+        "0x70418639b9c14c316c6ae17fa73febff0a5d1e066ce89d40a4b9b5381625adfe": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "oldTokenHolder",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "newTokenHolder",
+              "type": "address"
+            }
+          ],
+          "name": "TokenHolderChanged",
+          "type": "event",
+          "signature": "0x70418639b9c14c316c6ae17fa73febff0a5d1e066ce89d40a4b9b5381625adfe"
+        },
+        "0xbc1a6d11df191cc217bb06c2da838849148b8a9a56b8138fa96cd89e90a09215": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "newPrice",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "currency",
+              "type": "string"
+            }
+          ],
+          "name": "PriceChanged",
+          "type": "event",
+          "signature": "0xbc1a6d11df191cc217bb06c2da838849148b8a9a56b8138fa96cd89e90a09215"
+        },
+        "0x3dda580d2b9d92da338ef46ec718e7b1dd0a2c505e3df4aa8d40360192a0f822": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "newFees",
+              "type": "uint256"
+            }
+          ],
+          "name": "FeesChanged",
+          "type": "event",
+          "signature": "0x3dda580d2b9d92da338ef46ec718e7b1dd0a2c505e3df4aa8d40360192a0f822"
+        },
+        "0x4f2a367e694e71282f29ab5eaa04c4c0be45ac5bf2ca74fb67068b98bdc2887d": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "account",
+              "type": "address"
+            }
+          ],
+          "name": "AccountFrozen",
+          "type": "event",
+          "signature": "0x4f2a367e694e71282f29ab5eaa04c4c0be45ac5bf2ca74fb67068b98bdc2887d"
+        },
+        "0xf915cd9fe234de6e8d3afe7bf2388d35b2b6d48e8c629a24602019bde79c213a": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "account",
+              "type": "address"
+            }
+          ],
+          "name": "AccountUnfrozen",
+          "type": "event",
+          "signature": "0xf915cd9fe234de6e8d3afe7bf2388d35b2b6d48e8c629a24602019bde79c213a"
+        },
+        "0x44d6d25963f097ad14f29f06854a01f575648a1ef82f30e562ccd3889717e339": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "admin",
+              "type": "address"
+            }
+          ],
+          "name": "AdminAdded",
+          "type": "event",
+          "signature": "0x44d6d25963f097ad14f29f06854a01f575648a1ef82f30e562ccd3889717e339"
+        },
+        "0xa3b62bc36326052d97ea62d63c3d60308ed4c3ea8ac079dd8499f1e9c4f80c0f": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "admin",
+              "type": "address"
+            }
+          ],
+          "name": "AdminRemoved",
+          "type": "event",
+          "signature": "0xa3b62bc36326052d97ea62d63c3d60308ed4c3ea8ac079dd8499f1e9c4f80c0f"
+        },
+        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event",
+          "signature": "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0"
+        },
+        "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "spender",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "value",
+              "type": "uint256"
+            }
+          ],
+          "name": "Approval",
+          "type": "event",
+          "signature": "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925"
+        },
+        "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "value",
+              "type": "uint256"
+            }
+          ],
+          "name": "Transfer",
+          "type": "event",
+          "signature": "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"
+        }
+      },
+      "links": {},
+      "address": "0xA4C62ae97B2211bbB3DC4D6639a2E018b4a290A0",
+      "transactionHash": "0x8e9a29af05d8978a7b383a75147f0e74db1ac0a30ca417bbb6685f4dea29684f"
+    }
+  },
   "schemaVersion": "3.0.10",
-  "updatedAt": "2019-07-02T20:05:01.375Z",
+  "updatedAt": "2019-08-23T20:06:11.687Z",
   "devdoc": {
     "methods": {}
   },

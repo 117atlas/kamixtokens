@@ -1443,13 +1443,13 @@
           }
         ],
         "contractDependencies": [
+          297,
           703,
           746,
           778,
-          167,
           1296,
+          167,
           438,
-          297,
           7360,
           7458
         ],
@@ -15779,13 +15779,13 @@
           }
         ],
         "contractDependencies": [
+          297,
           703,
           746,
           778,
-          167,
           1296,
+          167,
           438,
-          297,
           7360,
           7458
         ],
@@ -28684,9 +28684,16 @@
     "name": "solc",
     "version": "0.5.8+commit.23d335f2.Emscripten.clang"
   },
-  "networks": {},
+  "networks": {
+    "3": {
+      "events": {},
+      "links": {},
+      "address": "0x8340e4440cc1c2AA9F872dFa4e4289C039a4b982",
+      "transactionHash": "0xaa185f9e6841c6247cfa4d2dcffbeb238ea8338bb35100552e8bb6d685dbbfb8"
+    }
+  },
   "schemaVersion": "3.0.10",
-  "updatedAt": "2019-07-02T20:05:01.736Z",
+  "updatedAt": "2019-08-23T20:06:11.905Z",
   "devdoc": {
     "methods": {}
   },

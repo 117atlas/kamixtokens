@@ -245,7 +245,8 @@ sendTransaction(account7, privateKey7, data, KMX_ADMIN_CENTER_ADDRESS, web3.util
     process.exit(0);
 });*/
 
-/*KMXTokensParts('0x'+web3.utils.toBN(30).toString('hex'), (res)=>{
+/*
+KMXTokensParts('0x'+web3.utils.toBN(30).toString('hex'), (res)=>{
     if (res!==0){
         console.log("Tokens to circ : " + web3.utils.toBN(res).div(DECI) + " KMX2");
         KMXTokensParts('0x'+web3.utils.toBN(12).toString('hex'), (res)=>{
@@ -259,7 +260,8 @@ sendTransaction(account7, privateKey7, data, KMX_ADMIN_CENTER_ADDRESS, web3.util
             }
         });
     }
-});*/
+});
+*/
 
 /*const data = kmxAdminCenter.methods
 .changeTokenEthPriceOracleUrl("https://young-chamber-62260.herokuapp.com/ethpriceinkmx2").encodeABI();

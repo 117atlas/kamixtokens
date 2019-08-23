@@ -12,6 +12,7 @@ const SafeKMXTokenForAdmin = artifacts.require("SafeKMXTokenForAdmin");
 const SafeKMXToken = artifacts.require("SafeKMXToken");
 const AdminLibrary = artifacts.require("AdminLibrary");
 
+
 module.exports = (deployer, network, accounts) => {
     KMXAdminCenter.deployed()
     .then((adminInstance)=>{

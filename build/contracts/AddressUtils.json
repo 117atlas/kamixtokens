@@ -552,12 +552,12 @@
     "3": {
       "events": {},
       "links": {},
-      "address": "0xA8bD85Ba4eda3b8aA899136ac74BaA36BcE01851",
-      "transactionHash": "0xee86926882b5116fdae0b73777fd93a8a63a631293ddbedb39e4cc6b23a29310"
+      "address": "0xC756dC81a598B97EBbEC5202B1675d0aAb93208a",
+      "transactionHash": "0xe1daa7b7494a88d798a71e50669707437e63f1c1f2ffabf932458cc3374bc236"
     }
   },
   "schemaVersion": "3.0.10",
-  "updatedAt": "2019-07-02T20:05:01.608Z",
+  "updatedAt": "2019-08-23T20:06:11.838Z",
   "devdoc": {
     "methods": {}
   },
