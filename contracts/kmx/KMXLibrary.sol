@@ -168,13 +168,13 @@ library KMXLibrary {
     }
 
     function reserveToCirculation(KMXTokenParts storage _kmxTokenParts, uint256 _amount) internal {
-        require(_amount < _kmxTokenParts._reserveTokens, "Amount to withdraw from reserve exceeds reserve funds");
+        require(_amount <= _kmxTokenParts._reserveTokens, "Amount to withdraw from reserve exceeds reserve funds");
         _kmxTokenParts._reserveTokens = _kmxTokenParts._reserveTokens.sub(_amount);
         _kmxTokenParts._circulatingTokens = _kmxTokenParts._circulatingTokens.add(_amount);
     }
 
     function circulationToReserve(KMXTokenParts storage _kmxTokenParts, uint256 _amount, uint256 _tokenHolderBalance) internal {
-        require(_amount < _tokenHolderBalance, "Amount to withdraw from reserve exceeds project funds");
+        require(_amount <= _tokenHolderBalance, "Amount to withdraw from reserve exceeds project funds");
         _kmxTokenParts._reserveTokens = _kmxTokenParts._reserveTokens.add(_amount);
         _kmxTokenParts._circulatingTokens = _kmxTokenParts._circulatingTokens.sub(_amount);
     }
@@ -210,7 +210,7 @@ library KMXLibrary {
 
     function buyICOTokensWithEther(ICOParams storage params, address _account, uint256 _ethAmt, Oracle oracle, uint256 _buyRefundWithEtherFees, string storage _tknEtherPriceOracleUrl) internal returns(bool)  {
         require(_account != address(0), "Account address must not be null");
-        require(_ethAmt > _buyRefundWithEtherFees, string(abi.encodePacked("Value offered must be greater than fees (", _buyRefundWithEtherFees, ")")));
+        require(_ethAmt > _buyRefundWithEtherFees, string(abi.encodePacked("Ethers offered must be greater than fees (", _buyRefundWithEtherFees, ")")));
         require(params._tokensToSell_remaining > 0, "There must have tokens to buy");
         if (params.pendingEtherICOBuyers[_account] > 0){
             return false;

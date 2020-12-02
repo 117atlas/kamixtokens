@@ -76,14 +76,14 @@
     "absolutePath": "/C/Users/Sim'S/WebstormProjects/kmxv1/contracts/kmx/utils/Oracle.sol",
     "exportedSymbols": {
       "Oracle": [
-        7590
+        7665
       ]
     },
-    "id": 7591,
+    "id": 7666,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 7542,
+        "id": 7617,
         "literals": [
           "solidity",
           ">=",
@@ -99,10 +99,10 @@
       {
         "absolutePath": "/C/Users/Sim'S/WebstormProjects/kmxv1/contracts/kmx/utils/OraclizeAPI.sol",
         "file": "./OraclizeAPI.sol",
-        "id": 7543,
+        "id": 7618,
         "nodeType": "ImportDirective",
-        "scope": 7591,
-        "sourceUnit": 13887,
+        "scope": 7666,
+        "sourceUnit": 13962,
         "src": "36:27:22",
         "symbolAliases": [],
         "unitAlias": ""
@@ -113,38 +113,38 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 7544,
+              "id": 7619,
               "name": "usingOraclize",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 13886,
+              "referencedDeclaration": 13961,
               "src": "86:13:22",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_usingOraclize_$13886",
+                "typeIdentifier": "t_contract$_usingOraclize_$13961",
                 "typeString": "contract usingOraclize"
               }
             },
-            "id": 7545,
+            "id": 7620,
             "nodeType": "InheritanceSpecifier",
             "src": "86:13:22"
           }
         ],
         "contractDependencies": [
-          13886
+          13961
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 7590,
+        "id": 7665,
         "linearizedBaseContracts": [
-          7590,
-          13886
+          7665,
+          13961
         ],
         "name": "Oracle",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 7566,
+              "id": 7641,
               "nodeType": "Block",
               "src": "170:135:22",
               "statements": [
@@ -158,7 +158,7 @@
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         },
-                        "id": 7557,
+                        "id": 7632,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -167,18 +167,18 @@
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 7553,
+                            "id": 7628,
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 14136,
+                            "referencedDeclaration": 14211,
                             "src": "189:3:22",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
                               "typeString": "msg"
                             }
                           },
-                          "id": 7554,
+                          "id": 7629,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -199,18 +199,18 @@
                           "arguments": [],
                           "expression": {
                             "argumentTypes": [],
-                            "id": 7555,
+                            "id": 7630,
                             "name": "oraclize_cbAddress",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 11709,
+                            "referencedDeclaration": 11784,
                             "src": "203:18:22",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_nonpayable$__$returns$_t_address_$",
                               "typeString": "function () returns (address)"
                             }
                           },
-                          "id": 7556,
+                          "id": 7631,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -233,7 +233,7 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "4d7573742062652063616c6c6564206f6e6c79206279204f7261636c65",
-                        "id": 7558,
+                        "id": 7633,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -260,21 +260,21 @@
                           "typeString": "literal_string \"Must be called only by Oracle\""
                         }
                       ],
-                      "id": 7552,
+                      "id": 7627,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        14139,
-                        14140
+                        14214,
+                        14215
                       ],
-                      "referencedDeclaration": 14140,
+                      "referencedDeclaration": 14215,
                       "src": "181:7:22",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 7559,
+                    "id": 7634,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -288,7 +288,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 7560,
+                  "id": 7635,
                   "nodeType": "ExpressionStatement",
                   "src": "181:76:22"
                 },
@@ -298,11 +298,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 7562,
+                        "id": 7637,
                         "name": "myId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 7547,
+                        "referencedDeclaration": 7622,
                         "src": "284:4:22",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
@@ -311,11 +311,11 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 7563,
+                        "id": 7638,
                         "name": "result",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 7549,
+                        "referencedDeclaration": 7624,
                         "src": "290:6:22",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -334,18 +334,18 @@
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 7561,
+                      "id": 7636,
                       "name": "_oracleCallback",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 7574,
+                      "referencedDeclaration": 7649,
                       "src": "268:15:22",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_bytes32_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bytes32,string memory)"
                       }
                     },
-                    "id": 7564,
+                    "id": 7639,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -359,29 +359,29 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 7565,
+                  "id": 7640,
                   "nodeType": "ExpressionStatement",
                   "src": "268:29:22"
                 }
               ]
             },
             "documentation": null,
-            "id": 7567,
+            "id": 7642,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "__callback",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 7550,
+              "id": 7625,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 7547,
+                  "id": 7622,
                   "name": "myId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7567,
+                  "scope": 7642,
                   "src": "127:12:22",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -390,7 +390,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 7546,
+                    "id": 7621,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "127:7:22",
@@ -404,10 +404,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 7549,
+                  "id": 7624,
                   "name": "result",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7567,
+                  "scope": 7642,
                   "src": "141:20:22",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -416,7 +416,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 7548,
+                    "id": 7623,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "141:6:22",
@@ -432,36 +432,36 @@
               "src": "126:36:22"
             },
             "returnParameters": {
-              "id": 7551,
+              "id": 7626,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "170:0:22"
             },
-            "scope": 7590,
+            "scope": 7665,
             "src": "107:198:22",
             "stateMutability": "nonpayable",
-            "superFunction": 8613,
+            "superFunction": 8688,
             "visibility": "public"
           },
           {
             "body": null,
             "documentation": null,
-            "id": 7574,
+            "id": 7649,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "_oracleCallback",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 7572,
+              "id": 7647,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 7569,
+                  "id": 7644,
                   "name": "myId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7574,
+                  "scope": 7649,
                   "src": "338:12:22",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -470,7 +470,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 7568,
+                    "id": 7643,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "338:7:22",
@@ -484,10 +484,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 7571,
+                  "id": 7646,
                   "name": "result",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7574,
+                  "scope": 7649,
                   "src": "352:20:22",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -496,7 +496,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 7570,
+                    "id": 7645,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "352:6:22",
@@ -512,12 +512,12 @@
               "src": "337:36:22"
             },
             "returnParameters": {
-              "id": 7573,
+              "id": 7648,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "382:0:22"
             },
-            "scope": 7590,
+            "scope": 7665,
             "src": "313:70:22",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -525,7 +525,7 @@
           },
           {
             "body": {
-              "id": 7588,
+              "id": 7663,
               "nodeType": "Block",
               "src": "471:53:22",
               "statements": [
@@ -535,11 +535,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 7584,
+                        "id": 7659,
                         "name": "_type",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 7576,
+                        "referencedDeclaration": 7651,
                         "src": "504:5:22",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -548,11 +548,11 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 7585,
+                        "id": 7660,
                         "name": "_url",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 7578,
+                        "referencedDeclaration": 7653,
                         "src": "511:4:22",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -571,75 +571,75 @@
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 7583,
+                      "id": 7658,
                       "name": "oraclize_query",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        8713,
-                        8756,
-                        8803,
-                        8848,
-                        8892,
-                        8938,
-                        8988,
-                        9036,
-                        9084,
-                        9134,
-                        9188,
-                        9240,
-                        9277,
-                        9317,
-                        9360,
-                        9400,
-                        9445,
-                        9493,
-                        9544,
-                        9592,
-                        9645,
-                        9701,
-                        9760,
-                        9816,
-                        9877,
-                        9941,
-                        10008,
-                        10072,
-                        10141,
-                        10213,
+                        8788,
+                        8831,
+                        8878,
+                        8923,
+                        8967,
+                        9013,
+                        9063,
+                        9111,
+                        9159,
+                        9209,
+                        9263,
+                        9315,
+                        9352,
+                        9392,
+                        9435,
+                        9475,
+                        9520,
+                        9568,
+                        9619,
+                        9667,
+                        9720,
+                        9776,
+                        9835,
+                        9891,
+                        9952,
+                        10016,
+                        10083,
+                        10147,
+                        10216,
                         10288,
-                        10360,
-                        10408,
-                        10458,
-                        10512,
-                        10564,
-                        10601,
-                        10641,
-                        10684,
-                        10724,
-                        10769,
-                        10817,
-                        10868,
-                        10916,
-                        10969,
-                        11025,
-                        11084,
-                        11140,
-                        11201,
-                        11265,
-                        11332,
-                        11396,
-                        11465,
-                        11537,
+                        10363,
+                        10435,
+                        10483,
+                        10533,
+                        10587,
+                        10639,
+                        10676,
+                        10716,
+                        10759,
+                        10799,
+                        10844,
+                        10892,
+                        10943,
+                        10991,
+                        11044,
+                        11100,
+                        11159,
+                        11215,
+                        11276,
+                        11340,
+                        11407,
+                        11471,
+                        11540,
                         11612,
-                        11684
+                        11687,
+                        11759
                       ],
-                      "referencedDeclaration": 8713,
+                      "referencedDeclaration": 8788,
                       "src": "489:14:22",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_bytes32_$",
                         "typeString": "function (string memory,string memory) returns (bytes32)"
                       }
                     },
-                    "id": 7586,
+                    "id": 7661,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -653,30 +653,30 @@
                       "typeString": "bytes32"
                     }
                   },
-                  "functionReturnParameters": 7582,
-                  "id": 7587,
+                  "functionReturnParameters": 7657,
+                  "id": 7662,
                   "nodeType": "Return",
                   "src": "482:34:22"
                 }
               ]
             },
             "documentation": null,
-            "id": 7589,
+            "id": 7664,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "query",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 7579,
+              "id": 7654,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 7576,
+                  "id": 7651,
                   "name": "_type",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7589,
+                  "scope": 7664,
                   "src": "406:19:22",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -685,7 +685,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 7575,
+                    "id": 7650,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "406:6:22",
@@ -699,10 +699,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 7578,
+                  "id": 7653,
                   "name": "_url",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7589,
+                  "scope": 7664,
                   "src": "427:18:22",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -711,7 +711,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 7577,
+                    "id": 7652,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "427:6:22",
@@ -727,15 +727,15 @@
               "src": "405:41:22"
             },
             "returnParameters": {
-              "id": 7582,
+              "id": 7657,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 7581,
+                  "id": 7656,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7589,
+                  "scope": 7664,
                   "src": "462:7:22",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -744,7 +744,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 7580,
+                    "id": 7655,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "462:7:22",
@@ -759,14 +759,14 @@
               ],
               "src": "461:9:22"
             },
-            "scope": 7590,
+            "scope": 7665,
             "src": "391:133:22",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 7591,
+        "scope": 7666,
         "src": "67:460:22"
       }
     ],
@@ -776,14 +776,14 @@
     "absolutePath": "/C/Users/Sim'S/WebstormProjects/kmxv1/contracts/kmx/utils/Oracle.sol",
     "exportedSymbols": {
       "Oracle": [
-        7590
+        7665
       ]
     },
-    "id": 7591,
+    "id": 7666,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 7542,
+        "id": 7617,
         "literals": [
           "solidity",
           ">=",
@@ -799,10 +799,10 @@
       {
         "absolutePath": "/C/Users/Sim'S/WebstormProjects/kmxv1/contracts/kmx/utils/OraclizeAPI.sol",
         "file": "./OraclizeAPI.sol",
-        "id": 7543,
+        "id": 7618,
         "nodeType": "ImportDirective",
-        "scope": 7591,
-        "sourceUnit": 13887,
+        "scope": 7666,
+        "sourceUnit": 13962,
         "src": "36:27:22",
         "symbolAliases": [],
         "unitAlias": ""
@@ -813,38 +813,38 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 7544,
+              "id": 7619,
               "name": "usingOraclize",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 13886,
+              "referencedDeclaration": 13961,
               "src": "86:13:22",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_usingOraclize_$13886",
+                "typeIdentifier": "t_contract$_usingOraclize_$13961",
                 "typeString": "contract usingOraclize"
               }
             },
-            "id": 7545,
+            "id": 7620,
             "nodeType": "InheritanceSpecifier",
             "src": "86:13:22"
           }
         ],
         "contractDependencies": [
-          13886
+          13961
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 7590,
+        "id": 7665,
         "linearizedBaseContracts": [
-          7590,
-          13886
+          7665,
+          13961
         ],
         "name": "Oracle",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 7566,
+              "id": 7641,
               "nodeType": "Block",
               "src": "170:135:22",
               "statements": [
@@ -858,7 +858,7 @@
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         },
-                        "id": 7557,
+                        "id": 7632,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -867,18 +867,18 @@
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 7553,
+                            "id": 7628,
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 14136,
+                            "referencedDeclaration": 14211,
                             "src": "189:3:22",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
                               "typeString": "msg"
                             }
                           },
-                          "id": 7554,
+                          "id": 7629,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -899,18 +899,18 @@
                           "arguments": [],
                           "expression": {
                             "argumentTypes": [],
-                            "id": 7555,
+                            "id": 7630,
                             "name": "oraclize_cbAddress",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 11709,
+                            "referencedDeclaration": 11784,
                             "src": "203:18:22",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_nonpayable$__$returns$_t_address_$",
                               "typeString": "function () returns (address)"
                             }
                           },
-                          "id": 7556,
+                          "id": 7631,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -933,7 +933,7 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "4d7573742062652063616c6c6564206f6e6c79206279204f7261636c65",
-                        "id": 7558,
+                        "id": 7633,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -960,21 +960,21 @@
                           "typeString": "literal_string \"Must be called only by Oracle\""
                         }
                       ],
-                      "id": 7552,
+                      "id": 7627,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        14139,
-                        14140
+                        14214,
+                        14215
                       ],
-                      "referencedDeclaration": 14140,
+                      "referencedDeclaration": 14215,
                       "src": "181:7:22",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 7559,
+                    "id": 7634,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -988,7 +988,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 7560,
+                  "id": 7635,
                   "nodeType": "ExpressionStatement",
                   "src": "181:76:22"
                 },
@@ -998,11 +998,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 7562,
+                        "id": 7637,
                         "name": "myId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 7547,
+                        "referencedDeclaration": 7622,
                         "src": "284:4:22",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
@@ -1011,11 +1011,11 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 7563,
+                        "id": 7638,
                         "name": "result",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 7549,
+                        "referencedDeclaration": 7624,
                         "src": "290:6:22",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -1034,18 +1034,18 @@
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 7561,
+                      "id": 7636,
                       "name": "_oracleCallback",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 7574,
+                      "referencedDeclaration": 7649,
                       "src": "268:15:22",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_bytes32_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bytes32,string memory)"
                       }
                     },
-                    "id": 7564,
+                    "id": 7639,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1059,29 +1059,29 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 7565,
+                  "id": 7640,
                   "nodeType": "ExpressionStatement",
                   "src": "268:29:22"
                 }
               ]
             },
             "documentation": null,
-            "id": 7567,
+            "id": 7642,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "__callback",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 7550,
+              "id": 7625,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 7547,
+                  "id": 7622,
                   "name": "myId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7567,
+                  "scope": 7642,
                   "src": "127:12:22",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1090,7 +1090,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 7546,
+                    "id": 7621,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "127:7:22",
@@ -1104,10 +1104,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 7549,
+                  "id": 7624,
                   "name": "result",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7567,
+                  "scope": 7642,
                   "src": "141:20:22",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1116,7 +1116,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 7548,
+                    "id": 7623,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "141:6:22",
@@ -1132,36 +1132,36 @@
               "src": "126:36:22"
             },
             "returnParameters": {
-              "id": 7551,
+              "id": 7626,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "170:0:22"
             },
-            "scope": 7590,
+            "scope": 7665,
             "src": "107:198:22",
             "stateMutability": "nonpayable",
-            "superFunction": 8613,
+            "superFunction": 8688,
             "visibility": "public"
           },
           {
             "body": null,
             "documentation": null,
-            "id": 7574,
+            "id": 7649,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "_oracleCallback",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 7572,
+              "id": 7647,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 7569,
+                  "id": 7644,
                   "name": "myId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7574,
+                  "scope": 7649,
                   "src": "338:12:22",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1170,7 +1170,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 7568,
+                    "id": 7643,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "338:7:22",
@@ -1184,10 +1184,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 7571,
+                  "id": 7646,
                   "name": "result",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7574,
+                  "scope": 7649,
                   "src": "352:20:22",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1196,7 +1196,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 7570,
+                    "id": 7645,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "352:6:22",
@@ -1212,12 +1212,12 @@
               "src": "337:36:22"
             },
             "returnParameters": {
-              "id": 7573,
+              "id": 7648,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "382:0:22"
             },
-            "scope": 7590,
+            "scope": 7665,
             "src": "313:70:22",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -1225,7 +1225,7 @@
           },
           {
             "body": {
-              "id": 7588,
+              "id": 7663,
               "nodeType": "Block",
               "src": "471:53:22",
               "statements": [
@@ -1235,11 +1235,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 7584,
+                        "id": 7659,
                         "name": "_type",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 7576,
+                        "referencedDeclaration": 7651,
                         "src": "504:5:22",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -1248,11 +1248,11 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 7585,
+                        "id": 7660,
                         "name": "_url",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 7578,
+                        "referencedDeclaration": 7653,
                         "src": "511:4:22",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -1271,75 +1271,75 @@
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 7583,
+                      "id": 7658,
                       "name": "oraclize_query",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        8713,
-                        8756,
-                        8803,
-                        8848,
-                        8892,
-                        8938,
-                        8988,
-                        9036,
-                        9084,
-                        9134,
-                        9188,
-                        9240,
-                        9277,
-                        9317,
-                        9360,
-                        9400,
-                        9445,
-                        9493,
-                        9544,
-                        9592,
-                        9645,
-                        9701,
-                        9760,
-                        9816,
-                        9877,
-                        9941,
-                        10008,
-                        10072,
-                        10141,
-                        10213,
+                        8788,
+                        8831,
+                        8878,
+                        8923,
+                        8967,
+                        9013,
+                        9063,
+                        9111,
+                        9159,
+                        9209,
+                        9263,
+                        9315,
+                        9352,
+                        9392,
+                        9435,
+                        9475,
+                        9520,
+                        9568,
+                        9619,
+                        9667,
+                        9720,
+                        9776,
+                        9835,
+                        9891,
+                        9952,
+                        10016,
+                        10083,
+                        10147,
+                        10216,
                         10288,
-                        10360,
-                        10408,
-                        10458,
-                        10512,
-                        10564,
-                        10601,
-                        10641,
-                        10684,
-                        10724,
-                        10769,
-                        10817,
-                        10868,
-                        10916,
-                        10969,
-                        11025,
-                        11084,
-                        11140,
-                        11201,
-                        11265,
-                        11332,
-                        11396,
-                        11465,
-                        11537,
+                        10363,
+                        10435,
+                        10483,
+                        10533,
+                        10587,
+                        10639,
+                        10676,
+                        10716,
+                        10759,
+                        10799,
+                        10844,
+                        10892,
+                        10943,
+                        10991,
+                        11044,
+                        11100,
+                        11159,
+                        11215,
+                        11276,
+                        11340,
+                        11407,
+                        11471,
+                        11540,
                         11612,
-                        11684
+                        11687,
+                        11759
                       ],
-                      "referencedDeclaration": 8713,
+                      "referencedDeclaration": 8788,
                       "src": "489:14:22",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_bytes32_$",
                         "typeString": "function (string memory,string memory) returns (bytes32)"
                       }
                     },
-                    "id": 7586,
+                    "id": 7661,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1353,30 +1353,30 @@
                       "typeString": "bytes32"
                     }
                   },
-                  "functionReturnParameters": 7582,
-                  "id": 7587,
+                  "functionReturnParameters": 7657,
+                  "id": 7662,
                   "nodeType": "Return",
                   "src": "482:34:22"
                 }
               ]
             },
             "documentation": null,
-            "id": 7589,
+            "id": 7664,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "query",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 7579,
+              "id": 7654,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 7576,
+                  "id": 7651,
                   "name": "_type",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7589,
+                  "scope": 7664,
                   "src": "406:19:22",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1385,7 +1385,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 7575,
+                    "id": 7650,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "406:6:22",
@@ -1399,10 +1399,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 7578,
+                  "id": 7653,
                   "name": "_url",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7589,
+                  "scope": 7664,
                   "src": "427:18:22",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1411,7 +1411,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 7577,
+                    "id": 7652,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "427:6:22",
@@ -1427,15 +1427,15 @@
               "src": "405:41:22"
             },
             "returnParameters": {
-              "id": 7582,
+              "id": 7657,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 7581,
+                  "id": 7656,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7589,
+                  "scope": 7664,
                   "src": "462:7:22",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1444,7 +1444,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 7580,
+                    "id": 7655,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "462:7:22",
@@ -1459,14 +1459,14 @@
               ],
               "src": "461:9:22"
             },
-            "scope": 7590,
+            "scope": 7665,
             "src": "391:133:22",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 7591,
+        "scope": 7666,
         "src": "67:460:22"
       }
     ],
@@ -1478,7 +1478,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.10",
-  "updatedAt": "2019-08-23T19:44:19.375Z",
+  "updatedAt": "2020-05-05T09:02:46.042Z",
   "devdoc": {
     "methods": {}
   },

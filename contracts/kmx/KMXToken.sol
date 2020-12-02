@@ -86,7 +86,7 @@ contract KMXToken is ConfigurableToken {
     }
 
     function transferFrom(address to, address from, uint256 value) public 
-    accountNotFrozen(msg.sender) accountNotFrozen(from) accountNotFrozen(to) notTokenHolder(msg.sender) returns(bool) {
+    accountNotFrozen(msg.sender) accountNotFrozen(from) accountNotFrozen(to) notTokenHolder(from) returns(bool) {
         require(to != address(0), "Receiver address must not be 0-address");
         require(from != address(0), "Sender address must not be 0-address");
         require(msg.sender != address(0), "Spender address must not be 0-address");

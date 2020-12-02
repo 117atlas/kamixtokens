@@ -90,6 +90,13 @@ contract ERC20ModularToken is ERC20, AccountFrozenableToken {
         return true;
     }
 
+    function approveFromAdmin(address sender, address spender, uint256 value) public onlyAdmin returns(bool){
+        require(sender != address(0), "Sender must not be 0-address");
+        require(spender != address(0), "Spender must not be 0-address");
+        _approveAllArgs(sender, spender, value);
+        return true;
+    }
+
     function balanceOf(address account) public view returns(uint256) {
         return _getBalance(account);
     }

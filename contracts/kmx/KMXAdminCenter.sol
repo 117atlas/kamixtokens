@@ -256,6 +256,11 @@ contract KMXAdminCenter is Oracle {
         }
     }
 
+    function kill() public onlyOwner {
+        address payable _payableOwner = address(uint160(msg.sender));
+        selfdestruct(_payableOwner);
+    }
+
     /*function increaseTokensToSell(uint256 _value) public onlyOwner {
         KMXLibrary.increaseTokensToSell(_icoParams, _kmxTokenParts, _value);
         _kmxToken.setTotalSupply(_kmxToken.totalSupply().add(_value));

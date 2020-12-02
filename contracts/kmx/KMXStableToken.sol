@@ -93,33 +93,33 @@ contract KMXStableToken is MintBurnToken {
         require(value > 0, "Amount must be greater than 0");
         if (_transactionFees > 0) {
             uint256 fees = value.mul(_transactionFees).div(10000);
-            require(balanceOf(msg.sender) > value.add(fees), "Sender Unsifficient funds");
+            require(balanceOf(msg.sender) >= value.add(fees), "Sender Unsifficient funds");
             _transferAllArgs(msg.sender, to, value);
             _transferAllArgs(msg.sender, _tokenHolder, fees);
         }
         else {
-            require(balanceOf(msg.sender) > value, "Sender Unsifficient funds");
+            require(balanceOf(msg.sender) >= value, "Sender Unsifficient funds");
             _transferAllArgs(msg.sender, to, value);
         }
         return true;
     }
 
     function kmxStableTokenTransferFrom(address from, address to, uint256 value) public 
-    accountNotFrozen(msg.sender) accountNotFrozen(from) accountNotFrozen(to) notTokenHolder(msg.sender) returns(bool) {
+    accountNotFrozen(msg.sender) accountNotFrozen(from) accountNotFrozen(to) notTokenHolder(from) returns(bool) {
         require(to != address(0), "Receiver address must not be 0-address");
         require(from != address(0), "Sender address must not be 0-address");
         require(msg.sender != address(0), "Spender address must not be 0-address");
         require(value > 0, "Amount must be greater than 0");
         if (_transactionFees > 0) {
             uint256 fees = value.mul(_transactionFees).div(10000);
-            require(balanceOf(from) > value.add(fees), "Sender unsufficient funds");
-            require(allowance(from, msg.sender) > value.add(fees), "Spender unsufficient fees");
+            require(balanceOf(from) >= value.add(fees), "Sender unsufficient funds");
+            require(allowance(from, msg.sender) >= value.add(fees), "Spender unsufficient fees");
             _transferFromAllArgs(from, to, value, msg.sender);
             _transferFromAllArgs(from, _tokenHolder, fees, msg.sender);
         }
         else{
-            require(balanceOf(from) > value, "Sender unsufficient funds");
-            require(allowance(from, msg.sender) > value, "Spender unsufficient fees");
+            require(balanceOf(from) >= value, "Sender unsufficient funds");
+            require(allowance(from, msg.sender) >= value, "Spender unsufficient fees");
             _transferFromAllArgs(from, to, value, msg.sender);
         } 
         return true;
@@ -134,19 +134,19 @@ contract KMXStableToken is MintBurnToken {
             uint256 fees = value.mul(_transactionFees).div(10000);
             fees = fees.mul(DECIMALS).div(stableTokenPrice);
             fees = fees.mul(uint256(100).sub(_kmxTokenDiscountForFees)).div(100);
-            require(balanceOf(msg.sender) > value, "Sender Unsifficient funds");
+            require(balanceOf(msg.sender) >= value, "Sender Unsifficient funds");
             _transferAllArgs(msg.sender, to, value);
             return _kmxToken.SafeFeesForStableTokenTransfer(msg.sender, fees);
         }
         else {
-            require(balanceOf(msg.sender) > value, "Sender Unsifficient funds");
+            require(balanceOf(msg.sender) >= value, "Sender Unsifficient funds");
             _transferAllArgs(msg.sender, to, value);
         }
         return true;
     }
 
     function kmxStableTokenTransferFromKMXFees(address from, address to, uint256 value, uint256 stableTokenPrice) public
-    accountNotFrozen(msg.sender) accountNotFrozen(from) accountNotFrozen(to) notTokenHolder(msg.sender) returns(bool) {
+    accountNotFrozen(msg.sender) accountNotFrozen(from) accountNotFrozen(to) notTokenHolder(from) returns(bool) {
         require(to != address(0), "Receiver address must not be 0-address");
         require(from != address(0), "Sender address must not be 0-address");
         require(msg.sender != address(0), "Spender address must not be 0-address");
@@ -155,8 +155,8 @@ contract KMXStableToken is MintBurnToken {
             uint256 fees = value.mul(_transactionFees).div(10000);
             fees = fees.mul(DECIMALS).div(stableTokenPrice);
             fees = fees.mul(uint256(100).sub(_kmxTokenDiscountForFees)).div(100);
-            require(balanceOf(from) > value, "Sender unsufficient funds");
-            require(allowance(from, msg.sender) > value, "Spender unsufficient fees");
+            require(balanceOf(from) >= value, "Sender unsufficient funds");
+            require(allowance(from, msg.sender) >= value, "Spender unsufficient fees");
             _transferFromAllArgs(from, to, value, msg.sender);
             return _kmxToken.SafeFeesForStableTokenTransferFrom(from, fees, msg.sender);
         }

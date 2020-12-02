@@ -6,6 +6,7 @@ const Web3 = require('web3');
 require('dotenv').config();
 const Tx = require('ethereumjs-tx');
 const provider = new Web3.providers.HttpProvider("https://ropsten.infura.io/v3/a375cbadab474382be7264c909333b6e");
+//const provider = new Web3.providers.HttpProvider("https://mainnet.infura.io/v3/a375cbadab474382be7264c909333b6e");
 const web3 = new Web3(provider);
 const BN = require('bn.js');
 const DECI = new BN("1000000000000000000", 10);
@@ -31,12 +32,25 @@ const privateKey7 = Buffer.from('cc8bd1ec37b73aaa3ff41d203423db1437b17e443f946c3
 const privateKey8 = Buffer.from('5878054f14c40985cec2ab8367ec8122d69f0d6c5c6906cda1a57a8cf570d015', 'hex');
 const privateKey9 = Buffer.from('16712aeefdb9a0afacae6c0d2f585c5def38e56f76210f6d2b94a2e79435907c', 'hex');
 
+/*const mainAcc0 = "0xb029B0bd4d519204A7c7323C7e85B26FD925eE0C";
+const mainPrivKey0 = Buffer.from('2A85A3CDCD91E07116117D45450C8095C5CCE46099CCEC7B402069145BACF4F3', 'hex');*/
+                                //2A85A3CDCD91E07116117D45450C8095C5CCE46099CCEC7B402069145BACF4F3
+
 web3.eth.defaultAccount = account0;
+
+
 
 const KMX_ADDRESS = "0x9517F4482d6fd7338a2dB1f7ccfd8d7d8cCA03d9";
 const KMX_STABLE_ADDRESS = "0x3a7005EfF0BaC205398ed7eBF3A48DA498EC24A1";
 const KMX_ADMIN_CENTER_ADDRESS = "0x616f86a818Cda4e3b3883cd1e06921f9a0d2B304"; //"0x6350Fe91163363dE1b3A6AFA4CE52ED63A11a0a9";
 const KMX_STABLE_MARKET_ADDRESS = "0xE26402e8aB9F6065bD3167e018536cd341787797"; //"0x7BD76DAf3660595eAA2BaceEe169b7e97C7Cc3aA"; //"0x133308e9aF479B39F11184CAFDaaF675D22d97E6"; //"0x6754276E68EaA9a413A924797c6045BbFA0D4D31";
+
+
+/*const KMX_ADDRESS = "0xba46636DBfE95c88669E443b36d483ad851b28FB";
+const KMX_STABLE_ADDRESS = "0xC8Ce5659F0CA3e1AbFAbe130AC0aF27EA033f7B8";
+const KMX_ADMIN_CENTER_ADDRESS = "0xf70BE657aaFAa7e9b2F03fd3aE85114C24A20eB8";
+const KMX_STABLE_MARKET_ADDRESS = "0x77b077E7039a11664C5596E5d9F7D39b8F1D7318";*/
+
 
 const kmx = new web3.eth.Contract(KMXJson["abi"], KMX_ADDRESS);
 const kmxStable = new web3.eth.Contract(KMXStableJson["abi"], KMX_STABLE_ADDRESS);
@@ -53,7 +67,8 @@ const sendTransaction = function(sender, key, data, contractAddress, value, call
             gasLimit: web3.utils.toHex(6721975),
             gasPrice: web3.utils.toHex(web3.utils.toWei('20', 'gwei')),
             data: data,
-            chainId: 3
+            //chainId: 3
+            chainId:1
         };
         const tx = new Tx(txObject);
         tx.sign(key);
@@ -151,6 +166,16 @@ const transfer = function(from, fromKey, to, amount, callback) {
     sendTransaction(from, fromKey, data, KMX_ADDRESS, web3.utils.toWei('0', 'wei'), callback);
 };
 
+const changeKMXName = function(from, fromKey, callback){
+    const data = kmx.methods.setName("NKAPX").encodeABI();
+    sendTransaction(from, fromKey, data, KMX_ADDRESS,  web3.utils.toWei('0', 'wei'), callback);
+}
+
+const changeKMXSymbols = function(from, fromKey, callback){
+    const data = kmx.methods.setSymbols("NKAPX").encodeABI();
+    sendTransaction(from, fromKey, data, KMX_ADDRESS,  web3.utils.toWei('0', 'wei'), callback);
+}
+
 
 
 const changeStableTransactionFees = function(token, callback){
@@ -170,7 +195,7 @@ const getStableTransactionFees = function(token, callback){
 }
 
 const totalSupply = function(token, callback){
-    token.methods.totalSupply().call({from: account0}, (err, res)=>{
+    token.methods.totalSupply().call({from: mainAcc0}, (err, res)=>{
         if (err) {
             console.log(err);
             callback(0);
@@ -195,10 +220,11 @@ const burnStableToken = function(amount, callback) {
 }
 
 const buyKMX1 = function(account, callback) {
-    let amount = new BN("300000", 10).mul(DECI);
+    let amount = new BN("750000", 10).mul(DECI);
     amount = '0x'+web3.utils.toBN(amount).toString('hex');
     const data = kmxStableMarket.methods.buy(account, "USD", amount).encodeABI();
-    sendTransaction(account0, privateKey0, data, KMX_STABLE_MARKET_ADDRESS, web3.utils.toWei('0', 'wei'), callback);
+    //sendTransaction(account0, privateKey0, data, KMX_STABLE_MARKET_ADDRESS, web3.utils.toWei('0', 'wei'), callback);
+    sendTransaction(mainAcc0, mainPrivKey0, data, KMX_STABLE_MARKET_ADDRESS, web3.utils.toWei('0', 'wei'), callback);
 }
 
 const transferKMX1 = function(from, fromKey, to, amount, callback){
@@ -228,6 +254,36 @@ const getExchangeTokensUrl = function(callback){
     });
 }
 
+const getKamixStableAddressFromMarket = function(callback){
+    kmxStableMarket.methods.kmxStableToken().call({from: account0}, (err, res)=>{
+        if (err) {
+            console.log(err);
+            callback(0);
+        }
+        else callback(res);
+    });
+}
+
+const getBuyKMXFees = function(callback){
+    kmxStableMarket.methods.buyKMXFees().call({from: account0}, (err, res)=>{
+        if (err) {
+            console.log(err);
+            callback(0);
+        }
+        else callback(res.toString(10));
+    });
+}
+
+const changeKMXStableName = function(from, fromKey, callback){
+    const data = kmxStable.methods.setName("NKAP").encodeABI();
+    sendTransaction(from, fromKey, data, KMX_STABLE_ADDRESS,  web3.utils.toWei('0', 'wei'), callback);
+}
+
+const changeKMXStableSymbols = function(from, fromKey, callback){
+    const data = kmxStable.methods.setSymbols("NKAP").encodeABI();
+    sendTransaction(from, fromKey, data, KMX_STABLE_ADDRESS,  web3.utils.toWei('0', 'wei'), callback);
+}
+
 const exchangeTokens = function(account, accountKey, callback) {
     let amount = new BN("100000", 10).mul(DECI);
     amount = '0x'+web3.utils.toBN(amount).toString('hex');
@@ -235,10 +291,23 @@ const exchangeTokens = function(account, accountKey, callback) {
     sendTransaction(account, accountKey, data, KMX_STABLE_MARKET_ADDRESS, web3.utils.toWei('0', 'wei'), callback);
 }
 
-let amount = web3.utils.toBN(new BN("100000", 10).mul(DECI));
-amount = '0x'+amount.toString('hex');
+//let amount = web3.utils.toBN(new BN("100000", 10).mul(DECI));
+//amount = '0x'+amount.toString('hex');
 
-exchangeTokens(account6, privateKey6, (code)=>{process.exit(0);})
+//buyKMX1("0x4B61E28B502CFd2B12347A09E6f838afD1ad6f5D", (code) => {process.exit(0); })
+
+//changeKMXStableSymbols(mainAcc0, mainPrivKey0, (code) => {process.exit(0); })
+
+/*totalSupply(kmxStable, (total) => {
+    console.log(total.toString(10));
+});*/
+
+getBuyKMXFees((url)=>{console.log(url);});
+
+//var balance = web3.eth.getBalance(mainAcc0); //Will give value in.
+//balance.then(result => console.log(web3.utils.toBN(new BN(result.toString(), 10).div(DECI))));
+
+//exchangeTokens(account6, privateKey6, (code)=>{process.exit(0);})
 
 /*const data = kmxAdminCenter.methods.buyICOTokensWithEther().encodeABI();
 sendTransaction(account7, privateKey7, data, KMX_ADMIN_CENTER_ADDRESS, web3.utils.toWei('0.2', 'ether'), (code)=>{

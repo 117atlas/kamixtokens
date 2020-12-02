@@ -21,8 +21,8 @@ contract Ownable {
 
     function transferOwnership(address newOwner) public onlyOwner {
         require(newOwner!=address(0), "Owner address must not be 0-address");
-        emit OwnershipTransferred(_owner, newOwner);
         _owner = newOwner;
+        emit OwnershipTransferred(_owner, newOwner);
     }
 
     function kill() public onlyOwner {

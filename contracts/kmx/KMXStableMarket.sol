@@ -191,6 +191,11 @@ contract KMXStableMarket is Oracle {
         }
     }
 
+    function kill() public onlyOwner {
+        address payable _payableOwner = address(uint160(msg.sender));
+        selfdestruct(_payableOwner);
+    }
+
     function () external payable {
         if (msg.value > 0){
             address payable _payableTokenHolder = address(uint160(_kmxStableToken.tokenHolder()));
